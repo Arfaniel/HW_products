@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Products.Classes
 {
-    class Products
+    public class Product
     {
         public string name;
         public string category;
@@ -15,17 +15,29 @@ namespace Products.Classes
         public float price;
 
         public delegate void ShowStatus();
-        public void ShowNorm()
+        public ShowStatus StatusWhite;
+        public ShowStatus StatusGreen;
+        public ShowStatus StatusRed;
+
+        public void ShowWhite()
         {
 
         }
-        public void ShowNear()
+        public void ShowGreen()
         {
 
         }
-        public void ShowExp()
+        public void ShowRed()
         {
 
+        }
+        public void Examine()
+        {
+            DateTime now = DateTime.Now;
+            if (expired > now.AddDays(10.0))
+            {
+
+            }
         }
     }
 }
