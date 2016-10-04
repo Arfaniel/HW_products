@@ -1,1 +1,6 @@
 c:\users\vivi\documents\visual studio 2015\Projects\Products\Products\bin\Debug\Products.exe.config
+C:\Users\VIVI\documents\visual studio 2015\Projects\Products\Products\bin\Debug\Products.exe
+C:\Users\VIVI\documents\visual studio 2015\Projects\Products\Products\bin\Debug\Products.pdb
+C:\Users\VIVI\documents\visual studio 2015\Projects\Products\Products\obj\Debug\Products.csprojResolveAssemblyReference.cache
+C:\Users\VIVI\documents\visual studio 2015\Projects\Products\Products\obj\Debug\Products.exe
+C:\Users\VIVI\documents\visual studio 2015\Projects\Products\Products\obj\Debug\Products.pdb

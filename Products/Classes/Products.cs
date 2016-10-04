@@ -15,21 +15,25 @@ namespace Products.Classes
         public float price;
 
         public delegate void ShowStatus();
-        public ShowStatus StatusWhite;
-        public ShowStatus StatusGreen;
-        public ShowStatus StatusRed;
+        public ShowStatus Status;
 
         public void ShowWhite()
         {
-
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(expired);
+            Console.ResetColor();
         }
         public void ShowGreen()
         {
-
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(expired);
+            Console.ResetColor();
         }
         public void ShowRed()
         {
-
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(expired);
+            Console.ResetColor();
         }
         public void Examine()
         {
