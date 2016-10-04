@@ -8,5 +8,24 @@ namespace Products.Classes
 {
     class Products
     {
+        public string name;
+        public string category;
+        public DateTime expired;
+        public float weight;
+        public float price;
+
+        public delegate void ShowStatus();
+        public void ShowNorm()
+        {
+
+        }
+        public void ShowNear()
+        {
+
+        }
+        public void ShowExp()
+        {
+
+        }
     }
 }
