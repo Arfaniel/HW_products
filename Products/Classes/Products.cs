@@ -38,10 +38,19 @@ namespace Products.Classes
         public void Examine()
         {
             DateTime now = DateTime.Now;
-            if (expired > now.AddDays(10.0))
+            if (expired <= now)
             {
-
+                Status = ShowRed;
             }
+            if (expired < now.AddDays(10))
+            {
+                Status = ShowGreen;
+            }
+            else
+            {
+                Status = ShowWhite;
+            }
+                
         }
     }
 }

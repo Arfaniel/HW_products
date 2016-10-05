@@ -11,9 +11,10 @@ namespace Products
     {
         static void Main(string[] args)
         {
-            Product[] one = new Product[5];
-
-
+            Product one = new Product();
+            one.expired = DateTime.Now.AddDays(20);
+            one.Examine();
+            
         }
     }
 }
