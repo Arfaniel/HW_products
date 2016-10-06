@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Products;
 
 namespace Products.Classes
 {
@@ -14,40 +15,49 @@ namespace Products.Classes
         public float weight;
         public float price;
 
-        public delegate string ShowStatus();
-        public ShowStatus Status;
+        public delegate void ShowStatus();
+        ShowStatus Status = null;
 
-        public string ShowWhite()
+        public void ShowWhite()
         {
             Console.ForegroundColor = ConsoleColor.White;
-            return expired.ToShortDateString();
+            Console.WriteLine(expired);
+            Console.ResetColor();
         }
-        public string ShowGreen()
+        public void ShowGreen()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            return expired.ToShortDateString();
+            Console.WriteLine(expired);
+            Console.ResetColor();
         }
-        public string ShowRed()
+        public void ShowRed()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            return expired.ToShortDateString();
+            Console.WriteLine(expired);
+            Console.ResetColor();
         }
         public void Examine()
         {
             DateTime now = DateTime.Now;
             if (expired <= now)
             {
-                Status = ShowRed;
+                Status = new ShowStatus(ShowRed);
             }
             if (expired < now.AddDays(10))
             {
-                Status = ShowGreen;
+                Status = new ShowStatus(ShowGreen);
             }
             else
             {
-                Status = ShowWhite;
+                Status = new ShowStatus(ShowWhite);
             }
                 
+
+
+        }
+        public void Show()
+        {
+            ShowStatus();
         }
     }
 }
