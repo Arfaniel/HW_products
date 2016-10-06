@@ -43,13 +43,13 @@ namespace Products.Classes
             {
                 Status = new ShowStatus(ShowRed);
             }
-            if (expired > now && expired <= now.AddDays(10))
-            {
-                Status = new ShowStatus(ShowGreen);
-            }
-            if (expired > now.AddDays(10))
+            if (expired > now && expired <= now.AddDays(7))
             {
                 Status = new ShowStatus(ShowWhite);
+            }
+            if (expired > now.AddDays(7))
+            {
+                Status = new ShowStatus(ShowGreen);
             }
         }
         public void Show()
