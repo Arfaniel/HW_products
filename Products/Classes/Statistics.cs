@@ -57,10 +57,10 @@ namespace Products.Classes
         {
             ConsoleKeyInfo key = new ConsoleKeyInfo();
             counter expCount = null;
-            do
-            {
-                Console.WriteLine();
-            } while (key.Key != ConsoleKey.Escape);
+            Console.WriteLine("Собираем отчет:");
+            Console.WriteLine("Общая цена всех товаров");
+            Console.WriteLine("Нужна 1, нет 2");
+
         }
 
     }
