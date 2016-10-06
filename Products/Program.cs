@@ -15,7 +15,7 @@ namespace Products
         {
 
             Product one = new Product();
-            one.expired = DateTime.Now.AddDays(20);
+            one.expired = DateTime.Now;
             one.Examine();
             one.Show();
         }

@@ -57,7 +57,7 @@ namespace Products.Classes
         }
         public void Show()
         {
-            ShowStatus();
+            Status();
         }
     }
 }
