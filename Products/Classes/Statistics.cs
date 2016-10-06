@@ -8,9 +8,9 @@ namespace Products.Classes
 {
     public class Statistics
     {
-        public delegate void counter(Product[] one);
-        
-        public void TotalSum(Product[] one)
+        public delegate void counter(Product[] one);        
+       
+        private void TotalSum(Product[] one)
         {
             float sum = 0F;
             for (int i = 0; i < one.Length; i++)
@@ -19,7 +19,7 @@ namespace Products.Classes
             }
             Console.WriteLine($"Total price is: {sum}");
         }
-        public void SumExp(Product[] one)
+        private void SumExp(Product[] one)
         {
             float sum = 0F;
             DateTime now = DateTime.Now;
@@ -32,7 +32,7 @@ namespace Products.Classes
             }
             Console.WriteLine($"Total price for all expired prods is: {sum}"); 
         }
-        public void avgPrice(Product[] one)
+        private void avgPrice(Product[] one)
         {
             float sum = 0F;
             int i = 0;
@@ -43,7 +43,7 @@ namespace Products.Classes
             sum = sum / i;
             Console.WriteLine($"Average price is: {sum}" );
         }
-        public void TotalWeight(Product[] one)
+        private void TotalWeight(Product[] one)
         {
             float sum = 0F;
             for (int i = 1; i < one.Length; i++)
