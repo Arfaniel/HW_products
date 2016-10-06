@@ -14,26 +14,23 @@ namespace Products.Classes
         public float weight;
         public float price;
 
-        public delegate void ShowStatus();
+        public delegate string ShowStatus();
         public ShowStatus Status;
 
-        public void ShowWhite()
+        public string ShowWhite()
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(expired);
-            Console.ResetColor();
+            return expired.ToShortDateString();
         }
-        public void ShowGreen()
+        public string ShowGreen()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(expired);
-            Console.ResetColor();
+            return expired.ToShortDateString();
         }
-        public void ShowRed()
+        public string ShowRed()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(expired);
-            Console.ResetColor();
+            return expired.ToShortDateString();
         }
         public void Examine()
         {
@@ -48,7 +45,6 @@ namespace Products.Classes
             }
             else
             {
-                //
                 Status = ShowWhite;
             }
                 

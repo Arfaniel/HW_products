@@ -14,7 +14,7 @@ namespace Products
             Product one = new Product();
             one.expired = DateTime.Now.AddDays(20);
             one.Examine();
-            
+            Console.WriteLine(one.expired);
         }
     }
 }
