@@ -8,13 +8,12 @@ namespace Products.Classes
 {
     public class Statistics
     {
-        public delegate int counter();
+        public delegate void counter(Product[] one);
         
-
         public void TotalSum(Product[] one)
         {
-            float sum = one[0].price;
-            for (int i = 1; i < one.Length; i++)
+            float sum = 0F;
+            for (int i = 0; i < one.Length; i++)
             {
                 sum += one[i].price;
             }
@@ -22,7 +21,7 @@ namespace Products.Classes
         }
         public void SumExp(Product[] one)
         {
-            float sum = 0;
+            float sum = 0F;
             DateTime now = DateTime.Now;
             for (int i = 1; i < one.Length; i++)
             {
@@ -35,7 +34,7 @@ namespace Products.Classes
         }
         public void avgPrice(Product[] one)
         {
-            float sum = 0;
+            float sum = 0F;
             int i = 0;
             for (; i < one.Length; i++)
             {
@@ -46,21 +45,43 @@ namespace Products.Classes
         }
         public void TotalWeight(Product[] one)
         {
-            float sum = 0;
+            float sum = 0F;
             for (int i = 1; i < one.Length; i++)
             {
                 sum += one[i].weight;
             }
             Console.WriteLine($"Total weight is {sum}");
         }
-        public void Menu()
+        public void Menu(Product[] one)
         {
             ConsoleKeyInfo key = new ConsoleKeyInfo();
             counter expCount = null;
             Console.WriteLine("Собираем отчет:");
-            Console.WriteLine("Общая цена всех товаров");
-            Console.WriteLine("Нужна 1, нет 2");
-
+            Console.WriteLine("Стоимость всех товаров \t Добавить - ПРОБЕЛ");
+            key = Console.ReadKey();
+            if(key.Key == ConsoleKey.Spacebar)
+            {
+                expCount += TotalSum;
+            }
+            Console.WriteLine("Стоимость всех просроченных товаров \t Добавить - ПРОБЕЛ");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.Spacebar)
+            {
+                expCount += SumExp;
+            }
+            Console.WriteLine("Средняя цена одного товара \t Добавить - ПРОБЕЛ");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.Spacebar)
+            {
+                expCount += avgPrice;
+            }
+            Console.WriteLine("Общий вес всех товаров \t Добавить - ПРОБЕЛ");
+            key = Console.ReadKey();
+            if (key.Key == ConsoleKey.Spacebar)
+            {
+                expCount += TotalWeight;
+            }
+            expCount(one);
         }
 
     }
