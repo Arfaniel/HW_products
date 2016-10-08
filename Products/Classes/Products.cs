@@ -17,23 +17,26 @@ namespace Products.Classes
 
         public delegate void ShowStatus();
         ShowStatus Status = null;
-
+        public event ShowStatus expAlarm;
+        
+        Handler mess = new Handler();
+        
         public void ShowWhite()
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(expired);
+            Console.WriteLine(expired + " price is:" + price);
             Console.ResetColor();
         }
         public void ShowGreen()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(expired);
+            Console.WriteLine(expired + " price is:" + price);
             Console.ResetColor();
         }
         public void ShowRed()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(expired);
+            Console.WriteLine(expired + " price is:" + price);
             Console.ResetColor();
         }
         public void Examine()
@@ -42,6 +45,8 @@ namespace Products.Classes
             if (expired <= now)
             {
                 Status = new ShowStatus(ShowRed);
+                expAlarm += mess.Message;
+                expAlarm();
             }
             if (expired > now && expired <= now.AddDays(7))
             {

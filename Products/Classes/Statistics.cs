@@ -8,9 +8,9 @@ namespace Products.Classes
 {
     public class Statistics
     {
-        public delegate void counter(Product[] one);        
+        public delegate void counter(Product[] one);
        
-        private void TotalSum(Product[] one)
+         private void TotalSum(Product[] one)
         {
             float sum = 0F;
             for (int i = 0; i < one.Length; i++)

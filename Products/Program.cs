@@ -9,11 +9,10 @@ namespace Products
 {
     class Program
     {
-        
-        
         static void Main(string[] args)
         {
             Product[] one = new Product[5];
+            
             for (int i = 0; i < one.Length; i++)
             {
                 one[i] = new Product();
@@ -22,7 +21,7 @@ namespace Products
             one[1].expired = DateTime.Now.AddDays(1);
             one[2].expired = DateTime.Now;
             one[3].expired = DateTime.Now.AddDays(-1);
-            one[4].expired = DateTime.Now.AddDays(-5);
+            one[4].expired = DateTime.Now.AddDays(3);
             one[0].price = 2.3F;
             one[1].price = 2.6F;
             one[2].price = 8.57F;
